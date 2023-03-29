@@ -15,7 +15,7 @@ const path = require ('path'); //caminhos e diretorios (__dirname __filename)
 
 const csrf = require('csurf');
 const { middlewareGlobal, checkCsrfError, csrfMiddleware} = require('./src/middlewares/middleware'); //middleware (express)
-const { default: helmet } = require('helmet');
+
 
 app.use(express.urlencoded({extended: true})); //express
 app.use(express.static(path.resolve(__dirname, 'public'))); //path
@@ -31,7 +31,7 @@ const sessionOptions = session({
     }
 });
 
-app.use(helmet());
+
 app.use(sessionOptions)
 app.use(flash());
 
